@@ -3,8 +3,9 @@ require 'CSV'
 require 'rest-client'
 # Program that will export all available products in a One Kings Lane sale with price, quantity, etc.
 puts "This program will show all available products under a price you set, and output a CSV"
-puts "Enter sale event ID to get all available product details:"
+
 # Sale ID is the 5 digit number at the end of a sale event URL (ex: https://www.onekingslane.com/sales/51418)
+puts "Enter sale event ID to get all available product details:"
 event_id = gets.chomp
 while event_id.length != 5
 	puts "Please enter a proper event ID:"
