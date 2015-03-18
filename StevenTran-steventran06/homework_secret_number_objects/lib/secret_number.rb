@@ -28,7 +28,7 @@ class SecretNumber
                  Do you hear birds...? \n \n"
 		@secret_num = rand(1..10)
 		# FOR TESTING
-		puts "Secret number is #{@secret_num} for TESTING!\n \n"
+		# puts "Secret number is #{@secret_num} for TESTING!\n \n"
     @secret_num = secret_num
 	end
 
