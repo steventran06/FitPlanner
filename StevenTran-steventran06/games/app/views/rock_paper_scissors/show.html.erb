@@ -1,0 +1,6 @@
+<h4>You chose<br> <%= image_tag(@image_array[@guess]) %></h4><br>
+<h4>The throw was<br> <%= image_tag(@image_array[@throw]) %></h4>
+
+<%= render @outcome_partial %>
+
+<h3><%= link_to 'Play Again', new_rock_paper_scissor_path %></h3>

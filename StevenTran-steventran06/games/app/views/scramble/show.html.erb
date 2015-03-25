@@ -1,0 +1,5 @@
+<%= render @outcome_partial %>
+
+<h3>The scrambled word was <%= @word.upcase %></h3>
+
+<h3><%= link_to 'Play Again', new_scramble_path %></h3>

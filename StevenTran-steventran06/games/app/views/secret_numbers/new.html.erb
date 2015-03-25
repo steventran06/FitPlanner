@@ -1,0 +1,13 @@
+<h1>Welcome to Secret Number!</h1>
+<p>To play this game, all you have to do is guess a number. If you guess the
+  <em>secret number</em>, you win!</p>
+<p>Choose carefully... you only get one try!</p>
+<h2>Pick a number:</h2>
+<ul>
+  <% 1.upto(5) do |number| %>
+    <li><%= link_to image_tag("secret_numbers/#{number}.jpeg"), secret_number_path(number) %></li>
+  <% end %>
+</ul>
+
+<h3><%= link_to 'Back to Games', games_path %></h3>
+

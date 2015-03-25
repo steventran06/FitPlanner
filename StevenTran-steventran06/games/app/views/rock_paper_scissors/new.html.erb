@@ -1,0 +1,10 @@
+<h1>Rock, Paper, Scissors!</h1>
+<p>Choose your throw!</p>
+
+<ul>
+<li><%= link_to image_tag("rock_paper_scissors/rock.jpeg"), rock_paper_scissor_path(0) %></li>
+<li><%= link_to image_tag("rock_paper_scissors/paper.jpeg"), rock_paper_scissor_path(1) %></li>
+<li><%= link_to image_tag("rock_paper_scissors/scissors.jpeg"), rock_paper_scissor_path(2) %></li>
+</ul>
+
+<h3><%= link_to 'Back to Games', games_path %></h3>

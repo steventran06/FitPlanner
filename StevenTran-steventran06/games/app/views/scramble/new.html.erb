@@ -1,0 +1,17 @@
+<h1>Scramble Game</h1>
+<p>What is the scrambled word?</p>
+
+<h3><%= @word.split("").shuffle.join %></h3>
+
+<p>What is your guess?</p>
+
+<div>
+<%= form_tag("/scramble/1", method: "get") do %>
+<%= text_field_tag :guess, nil, :autocomplete => 'off' %>	
+<%= hidden_field_tag :word, @word %>
+<%= submit_tag("Guess") %>
+<% end %>
+</div>
+
+
+<h3><%= link_to 'Back to Games', games_path %></h3>

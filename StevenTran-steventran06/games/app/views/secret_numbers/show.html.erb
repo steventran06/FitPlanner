@@ -1,0 +1,5 @@
+<%= render @outcome_partial %>
+
+<h4>The secret number was <%= image_tag("secret_numbers/#{@secret_number}.jpeg") %></h4>
+
+<h3><%= link_to "Play Again", new_secret_number_path %></h3>
