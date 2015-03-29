@@ -1,0 +1,32 @@
+<h1>Welcome to RetFlix!</h1>
+<p>See our collection of movies below:</p>
+
+<%= render 'searchform' %>
+
+<%= render @search_message %>
+
+<br>
+
+<table border="1" style="width:75%">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %></td>
+        <td><%= movie.description %></td>
+        <td><%= movie.year_released %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h3><%= link_to 'Back to all movies', movies_path %></h3>
+<h3><%= link_to 'Add a movie', new_movie_path %></h3>
+
