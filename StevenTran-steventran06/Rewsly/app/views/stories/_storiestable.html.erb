@@ -1,0 +1,29 @@
+<table border="1" style="width:75%">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Link</th>
+      <th>Upvotes</th>
+      <th>Category</th>
+      <th>Created at</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @stories.each do |story| %>
+        <% if story.upvotes > 4 && story.created_at > Date.today %>
+        <tr>
+          <td><%= story.title %></td>
+          <td><%= link_to "#{story.link}", "#{story.link}" %></td>
+          <td><%= story.upvotes %></td>
+          <td><%= story.category %></td>
+                    <td><%= story.created_at %></td>
+
+          <td><%= link_to 'Show', story %></td>
+          <td><%= link_to 'Edit', edit_story_path(story) %></td>
+          <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      <% end %>
+  </tbody>
+</table>
