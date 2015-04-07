@@ -1,6 +1,10 @@
-<h1>Create a Ritly!</h1>
-<%= render 'form' %>
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
 
+<h1>Create a Ritly!</h1>
+
+<%= render 'form' %>
+<br>
 <table border="1" style="width:75%">
   <thead>
     <tr>
@@ -19,3 +23,5 @@
     <% end %>
   </tbody>
 </table>
+
+<% end %>
