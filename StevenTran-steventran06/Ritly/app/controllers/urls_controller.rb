@@ -2,6 +2,7 @@ class UrlsController < ApplicationController
   def create
   	@url = Url.new(url_params)
   	@url.hash_code = rand(10000)
+    @url.user_id = current_user.id
 
   	respond_to do |format|
   		if @url.save
@@ -18,7 +19,8 @@ class UrlsController < ApplicationController
   end
 
   def new
-  	@urls = Url.all
+  	# @user = User.find(params[:id])
+    @user = current_user
   	@url = Url.new
   end
 
