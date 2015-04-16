@@ -1,0 +1,24 @@
+<table border="1" style="width:75%">
+  <thead>
+    <tr>
+      <th>Artist</th>
+      <th>Museum</th>
+      <th>Title</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @paintings.each do |painting| %>
+        <tr>
+          <td><%= painting.artist %></td>
+          <td><%= painting.museum %></td>
+          <td><%= painting.title %></td>          
+          <td><%= link_to image_tag("#{painting.image}",:size => "150"), "#{painting.image}" %></td>
+          <td><%= link_to 'Show', painting %></td>
+          <td><%= link_to 'Edit', edit_painting_path(painting) %></td>
+          <td><%= link_to 'Destroy', painting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>

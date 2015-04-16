@@ -11,4 +11,6 @@ class Story < ActiveRecord::Base
 
 	def search(query)
 	end
+
+	belongs_to :user
 end

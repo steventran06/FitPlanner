@@ -3,6 +3,7 @@ class StoriesController < ApplicationController
 
   def index
     @stories = Story.all
+    @user = current_user
   end
 
   # def show
@@ -26,6 +27,8 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
+    @story.user_id = current_user.id
+
 
     respond_to do |format|
       if @story.save
