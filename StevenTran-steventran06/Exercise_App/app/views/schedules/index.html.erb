@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row" align="center"> 
+    <div class="text-center">
+      <h1>FitPlanner</h1>
+      <p class="lead">Today is <%= @date %>!</p>
+      <h3><strong>These are your exercises for the week:</strong></h3>
+    </div>
+  </div>
+
+  <%= render 'exercisestable' %>
+
+  <hr>
+
+  <%= render 'randomexercise' %>
+
+  <hr>
+
+  <div class="row" align="center">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6"><h4>Interesting read of the day:</h4>
+    <% @sample = @articles.sample %>
+    <strong><%= link_to "#{@sample['headline']['main']}", "#{@sample['web_url']}", target: "_blank" %></strong><br>
+    <%= @sample['snippet'] %></div>
+    <div class="col-sm-3"></div>
+  </div>
+</div> 

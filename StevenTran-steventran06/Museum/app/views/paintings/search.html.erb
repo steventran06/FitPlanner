@@ -1,5 +1,9 @@
-<h1>Welcome to Museum!</h1>
-<p>See our collection of paintings below:</p>
+<div class="container">
+  <div class="text-center">
+    <h1>Welcome to Museum!</h1>
+    <p class="lead">See our collection of paintings below:</p>
+  </div> 
+</div>
 
 <%= render 'searchform' %>
 
@@ -9,6 +13,6 @@
 
 <%= render 'paintingstable' %>
 
-<h3><%= link_to 'Back to all paintings', paintings_path %></h3>
-<h3><%= link_to 'Add a painting', new_painting_path %></h3>
+<h4><%= link_to 'Back to all paintings', paintings_path %></h4>
+<h4><%= link_to 'Add a painting', new_painting_path %></h4>
 

@@ -1,0 +1,72 @@
+<%= form_for(@exercise) do |f| %>
+  <% if @exercise.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
+
+      <ul>
+      <% @exercise.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :exercise %><br>
+    <%= f.text_field :exercise %>
+  </div>
+  <br>
+  <p><strong>Main Muscle Worked</strong></p>
+  <div>
+    <%= f.select :main_muscle_worked, [['Abdominals'], ['Hamstrings'], ['Adductors'], ['Quadriceps'], ['Biceps'], ['Shoulders'], ['Chest'], ['Middle Back'], ['Lower Back'], ['Calves'], ['Glutes'], ['Lats'], ['Triceps'], ['Traps'], ['Forearms'], ['Neck']] %>
+  </div>
+  <br>
+  <p><strong>Exercise Type</strong></p>
+  <div>
+    <%= f.select :exercise_type, [['Cardio'], ['Olympic Weightlifting'], ['Plyometrics'], ['Powerlifting'], ['Strength'], ['Stretching'], ['Strongman'], ['Other']] %>
+  </div>
+  <br>
+    <p><strong>Level</strong></p>
+  <div>
+    <%= f.select :level, [['Beginner'], ['Intermediate'], ['Expert']] %>
+  </div>
+  <br>
+    <p><strong>Force</strong></p>
+  <div>
+    <%= f.select :force, [['N/A'], ['Pull'], ['Push'], ['Static']] %>
+  </div>
+  <br>
+    <p><strong>Mechanics Type</strong></p>
+  <div>
+    <%= f.select :mechanics_type, [['N/A'], ['Compound'], ['Isolation']] %>
+  </div>
+  <br>
+    <div class="field">
+    <%= f.label :other_muscles_worked %><br>
+    <%= f.text_field :other_muscles_worked %>
+  </div>
+  <br>  
+  <div class="field">
+    <%= f.label :equipment %><br>
+    <%= f.text_field :equipment %>
+  </div>
+  <br>
+    <div class="field">
+    <%= f.label :guide %><br>
+    <%= f.text_area :guide %>
+  </div>
+  <br>
+    <div class="field">
+    <%= f.label :link %><br>
+    <%= f.text_field :link %>
+  </div>
+  <br>
+    <div class="field">
+    <%= f.label :picture %><br>
+    <%= f.text_field :picture %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

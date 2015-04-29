@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   get 'paintings/search'
 
+    get 'paintings/test'
+
+
 
   resources :paintings
 

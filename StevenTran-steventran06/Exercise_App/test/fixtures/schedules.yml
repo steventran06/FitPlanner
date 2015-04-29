@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day: 1
+  muscle_group: MyString
+  user_id: MyString
+  random_exercise: MyString
+
+two:
+  day: 1
+  muscle_group: MyString
+  user_id: MyString
+  random_exercise: MyString

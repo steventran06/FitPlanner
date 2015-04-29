@@ -1,0 +1,35 @@
+<div class="container-full">
+  <div class="col-lg-12 text-center v-center">
+    <h1>FitPlanner</h1>
+    <%= image_tag("logo.png") %><br>
+    <p class="lead">Revolutionize your workout!</p>
+    <br><br><br><br>
+  </div>
+</div> <!-- /row -->
+
+<div class="container">
+  	<hr>
+  	<div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading"><center><h4><strong><%= link_to 'Build Your Schedule', schedules_path %></strong></h4></center></div>
+            <div class="panel-body">Build your perfect workout for the week and get brand new exercises everyday to try!
+            </div>
+          </div>
+        </div>
+      	<div class="col-md-4">
+        	<div class="panel panel-default">
+            <div class="panel-heading"><center><h4><strong><%= link_to '800+ Different Exercises To Try!', exercises_path %></strong></h4></center></div>
+            <div class="panel-body">Looking for a new exercise to try? Search our database of exercises and find your next challenge! Have an exercise you want to share? Feel free to add it to our <%= link_to 'collection', exercises_path %>
+            </div>
+          </div>
+        </div>
+      	<div class="col-md-4">
+        	<div class="panel panel-default">
+            <div class="panel-heading"><center><h4><strong><%= link_to 'Save Your Favorite Workouts', favorites_path %></strong></h4></center></div>
+            <div class="panel-body">Did you find the perfect workout? Add it to your list of favorites and revisit it anytime!
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

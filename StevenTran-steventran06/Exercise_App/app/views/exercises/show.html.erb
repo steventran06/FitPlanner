@@ -1,0 +1,20 @@
+<div class="row">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Exercise: <%= @exercise.exercise %></h1>
+  <p><%= link_to image_tag("#{@exercise.picture}",:height => "300"), "#{@exercise.picture}", target: "_blank" %></p>
+  <p><strong>Main Muscle Worked:</strong> <%= @exercise.main_muscle_worked %></p>
+  <p><strong>Level:</strong> <%= @exercise.level %></p>
+  <p><strong>Exercise Type:</strong> <%= @exercise.exercise_type %></p>
+  <p><strong>Equipment:</strong> <%= @exercise.equipment %></p>
+  <p><strong>Other Muscles Worked:</strong>
+    <% if @exercise.other_muscles_worked == @exercise.main_muscle_worked %>
+    N/A
+    <% else %>
+    <%= @exercise.other_muscles_worked %>
+    <% end %>
+  </p>
+  <p><strong>Guide:</strong> <%= @exercise.guide %></p>
+
+  <%= link_to 'Back', exercises_path %>
+</div>

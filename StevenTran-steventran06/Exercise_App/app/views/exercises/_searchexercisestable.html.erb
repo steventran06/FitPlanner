@@ -1,0 +1,80 @@
+<table border="1" style="width:100%">
+  <thead>
+    <tr>
+      <th width="8%"><center>Exercise</center></th>
+      <th width="8%"><center>Main Muscle</center></th>
+      <th width="7%"><center>Level</center></th>
+      <th width="7%"><center>Exercise Type</center></th>
+      <th width="8%"><center>Equipment</center></th>
+      <th width="13%"><center>Picture</center></th>
+      <th width="40%"><center>Guide</center></th>
+      <th width="9%"><center>More</center></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @exercises.each do |exercise| %>
+      <% @new_favorite_exercise = exercise.exercise %>
+        <% if exercise.user_id.blank? == true %>
+          <tr>
+            <td><center><%= exercise.exercise %></center></td>
+            <td><center><%= exercise.main_muscle_worked %></center></td>
+            <td><center><%= exercise.level %></center></td>
+            <td><center><%= exercise.exercise_type %></center></td>
+            <td><center><%= exercise.equipment %></center></td>
+            <td><center><%= link_to image_tag("#{exercise.picture}",:height => "100"), "#{exercise.picture}", target: "_blank" %></center></td>
+            <td><center><%= truncate(exercise.guide, :length => 200)%></center></td>
+            <td><center><%= button_to "Link", "#{exercise.link}", target: "_new" %><%= button_to 'Show', exercise, method: :get %></center><%= button_to "Add Favorite", "/favorites?new_favorite=#{exercise.exercise}", method: :post%></td>
+          </tr>
+        <% end %>
+      <% end %>
+  </tbody>
+</table>
+
+<hr>
+
+<p class="lead"><a name="userexercises"></a>User Submitted Exercises</p>
+<p><a href="#top">Back to Top</a></p>
+
+<%= button_to 'Add An Exercise!', new_exercise_path, method: :get %><br>
+
+<table border="1" style="width:100%">
+  <thead>
+    <tr>
+      <th width="8%"><center>Exercise</center></th>
+      <th width="8%"><center>Main Muscle</center></th>
+      <th width="7%"><center>Level</center></th>
+      <th width="7%"><center>Exercise Type</center></th>
+      <th width="8%"><center>Equipment</center></th>
+      <th width="13%"><center>Picture</center></th>
+      <th width="40%"><center>Guide</center></th>
+      <th width="9%"><center>More</center></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @exercises.each do |exercise| %>
+      <% @new_favorite_exercise = exercise.exercise %>
+        <% if exercise.user_id.blank? == false %>
+          <tr>
+            <td><center><%= exercise.exercise %></center></td>
+            <td><center><%= exercise.main_muscle_worked %></center></td>
+            <td><center><%= exercise.level %></center></td>
+            <td><center><%= exercise.exercise_type %></center></td>
+            <td><center><%= exercise.equipment %></center></td>
+            <% if exercise.picture.blank? == true %>
+              <td><center><%= image_tag "logo.png",:height => "100" %></center></td>
+            <% else %>
+              <td><center><%= link_to image_tag("#{exercise.picture}",:height => "100"), "#{exercise.picture}", target: "_blank" %></center></td>
+            <% end %>
+            <td><center><%= truncate(exercise.guide, :length => 200)%></center></td>
+            <td><center><%= button_to "Link", "#{exercise.link}", target: "_new" %><%= button_to 'Show', exercise, method: :get %>
+            <% if current_user.id == 1 %>
+              <%= button_to 'Remove', exercise, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+              <%= button_to "Add Favorite", "/favorites?new_favorite=add", method: :post%></center></td>
+          </tr>
+        <% end %>
+      <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,72 @@
+<div class="row">
+  <table border=1 cellpadding=3 cellspacing=1 class="table-striped" style="width:100%">
+    <thead>
+      <tr>
+        <th width="14%"><center>Sunday</center></th>
+        <th width="14%"><center>Monday</center></th>
+        <th width="14%"><center>Tuesday</center></th>
+        <th width="15%"><center>Wednesday</center></th>
+        <th width="15%"><center>Thursday</center></th>
+        <th width="14%"><center>Friday</center></th>
+        <th width="14%"><center>Saturday</center></th>
+      </tr>
+    </thead>
+
+    <tbody>
+          <tr>
+            <td valign="top">
+            <center><% @schedules.each do |schedule| %>
+              <% if schedule.day == "Sunday" %>
+                <%= link_to "#{schedule.muscle_group}", schedule %><br>
+              <% end %>
+            <% end %></center></td>
+            
+            <td valign="top">
+            <center><% @schedules.each do |schedule| %>
+              <% if schedule.day == "Monday" %>
+                <%= link_to "#{schedule.muscle_group}", schedule %><br>
+              <% end %>
+            <% end %></center></td>          
+
+            <td valign="top">
+            <center><% @schedules.each do |schedule| %>
+              <% if schedule.day == "Tuesday" %>
+                <%= link_to "#{schedule.muscle_group}", schedule %><br>
+              <% end %>
+            <% end %></center></td>          
+
+            <td valign="top">
+            <center><% @schedules.each do |schedule| %>
+              <% if schedule.day == "Wednesday" %>
+                <%= link_to "#{schedule.muscle_group}", schedule %><br>
+              <% end %>
+            <% end %></center></td>          
+
+            <td valign="top">
+            <center><% @schedules.each do |schedule| %>
+              <% if schedule.day == "Thursday" %>
+                <%= link_to "#{schedule.muscle_group}", schedule %><br>
+              <% end %>
+            <% end %></center></td>          
+
+            <td valign="top">
+            <center><% @schedules.each do |schedule| %>
+              <% if schedule.day == "Friday" %>
+                <%= link_to "#{schedule.muscle_group}", schedule %><br>
+              <% end %>
+            <% end %></center></td>          
+
+            <td valign="top">
+            <center><% @schedules.each do |schedule| %>
+              <% if schedule.day == "Saturday" %>
+                <%= link_to "#{schedule.muscle_group}", schedule %><br>
+              <% end %>
+            <% end %></center></td>
+          </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="row">
+  <p><center><%= button_to "Add a muscle group to your schedule", new_schedule_path, method: :get%></center></p>
+</div>

@@ -1,0 +1,31 @@
+<table border="1" style="width:100%">
+  <thead>
+    <tr>
+      <th><center>Exercise</center></th>
+      <th><center>Level</center></th>
+      <th><center>Main Muscle</center></th>
+      <th><center>Exercise Type</center></th>
+      <th><center>Equipment</center></th>
+      <th><center>Picture</center></th>
+      <th width="40%"><center>Guide</center></th>
+      <th width="5%"><center>Link</center></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @favorites.each do |exercise| %>
+          <% @favorite = Exercise.where(exercise: exercise.favorite_exercise) %>
+          <% @favorite_exercise = @favorite.first %>
+        <tr>
+          <td><center><%= @favorite_exercise.exercise %></center></td>
+          <td><center><%= @favorite_exercise.level %></center></td>
+          <td><center><%= @favorite_exercise.main_muscle_worked %></center></td>
+          <td><center><%= @favorite_exercise.exercise_type %></center></td>
+          <td><center><%= @favorite_exercise.equipment %></center></td>
+          <td><center><%= link_to image_tag("#{@favorite_exercise.picture}",:height => "100"), "#{@favorite_exercise.picture}", target: "_blank" %></center></td>
+          <td><center><%= truncate(@favorite_exercise.guide, :length => 200)%></center></td>
+          <td><center><%= button_to "Link", "#{@favorite_exercise.link}", target: "_blank" %><%= button_to 'Show', @favorite_exercise, method: :get %><%= button_to 'Remove', exercise, method: :delete, data: { confirm: 'Are you sure?' } %></center></td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>

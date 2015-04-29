@@ -1,0 +1,25 @@
+  <div class="row" align="center">
+    <% if @schedules.where(day: "#{@date}").count == 0 %>
+      <h3>Add a <%= @date %> workout to your schedule to get a random workout!</h3>
+      <% @gifs = @fail_gifs.sample %>
+      <%= image_tag "#{@gifs['images']['fixed_height']['url']}" %>
+    <% else %>  
+      <% @schedules.each do |schedule| %>
+        <% if schedule.day == @date %>
+          <h4><center>Random <%= schedule.muscle_group %> Exercise of the Day:</center></h4></strong>
+          <div class="col-sm-6">
+            <% @random_exercise = Exercise.where(exercise: schedule.random_exercise).first %>
+            <h4><%= "#{@random_exercise.exercise}" %></h4>
+            <%= link_to image_tag("#{@random_exercise.picture}",:height => "200"), "#{@random_exercise.picture}", target: "_blank" %></div>
+          <div class="col-sm-6">
+            <p>Works out the <strong><%= @random_exercise.main_muscle_worked %></strong></p>
+            <p><%= truncate(@random_exercise.guide, :length => 400)%></p>
+            <p><strong><%= link_to "More Info", "#{@random_exercise.link}", target: "_blank" %></strong></p>
+            <p>Don't like this one?</p>
+            <p><%= button_to "Try one of the #{Exercise.where(main_muscle_worked: "#{schedule.muscle_group}").count} other #{schedule.muscle_group.downcase} exercises!", "/schedules/#{schedule.id}?new_exercise=yes", method: :patch%></p>
+              <p><%= button_to "Add to Favorite", "/favorites?new_favorite=#{@random_exercise.exercise}", method: :post%></p>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>

@@ -1,0 +1,10 @@
+<div class"container">
+	<div class="row">
+		<h3>Your Schedule</h3>
+		<p><strong>Day of the Week:</strong> <%= @schedule.day %></p>
+		<p><strong>Main Muscle:</strong> <%= @schedule.muscle_group %></p>
+		<%= button_to 'Remove from schedule', @schedule, method: :delete, data: { confirm: 'Are you sure?' } %>
+		<%= button_to 'Back', schedules_path, method: :get %>
+	</div>
+</div>
+

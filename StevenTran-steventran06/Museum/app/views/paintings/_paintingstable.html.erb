@@ -1,23 +1,22 @@
-<table border="1" style="width:75%">
+<table class="table-striped" style="width:100%">
   <thead>
     <tr>
-      <th>Artist</th>
-      <th>Museum</th>
-      <th>Title</th>
-      <th>Image</th>
+      <th><center>Artist</center></th>
+      <th><center>Museum</center></th>
+      <th><center>Title</center></th>
+      <th><center>Image</center></th>
+      <th><center>Changes</center></th>
     </tr>
   </thead>
 
   <tbody>
       <% @paintings.each do |painting| %>
         <tr>
-          <td><%= painting.artist %></td>
-          <td><%= painting.museum %></td>
-          <td><%= painting.title %></td>          
-          <td><%= link_to image_tag("#{painting.image}",:size => "150"), "#{painting.image}" %></td>
-          <td><%= link_to 'Show', painting %></td>
-          <td><%= link_to 'Edit', edit_painting_path(painting) %></td>
-          <td><%= link_to 'Destroy', painting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><center><%= painting.artist %></center></td>
+          <td><center><%= painting.museum %></center></td>
+          <td><center><%= painting.title %></center></td>          
+          <td><center><%= link_to image_tag("#{painting.image}",:height => "100"), "#{painting.image}" %></center></td>
+          <td><center><%= link_to 'Show', painting %><br><%= link_to 'Edit', edit_painting_path(painting) %><br><%= link_to 'Destroy', painting, method: :delete, data: { confirm: 'Are you sure?' } %></center></td>
         </tr>
       <% end %>
   </tbody>

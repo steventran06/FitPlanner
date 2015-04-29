@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  exercise: MyString
+  main_muscle_worked: MyString
+  exercise_type: MyString
+  equipment: MyString
+  force: MyString
+  mechanics_type: MyString
+  guide: MyText
+  level: MyString
+  link: MyString
+  other_muscles_worked: MyString
+  picture: MyString
+  user_id: MyString
+
+two:
+  exercise: MyString
+  main_muscle_worked: MyString
+  exercise_type: MyString
+  equipment: MyString
+  force: MyString
+  mechanics_type: MyString
+  guide: MyText
+  level: MyString
+  link: MyString
+  other_muscles_worked: MyString
+  picture: MyString
+  user_id: MyString
