@@ -6,7 +6,9 @@ FitPlanner manages your fitness schedule and helps you search and save new exerc
 Tech Stack
 -----------------------
 
-Follow these directions closely to switch over to this repository.
+FitPlanner was built using these technologies:
 
 * Ruby on Rails
 * SQLite
+* GIPHY API
+* New York Times API
