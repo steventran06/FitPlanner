@@ -8,5 +8,5 @@ Tech Stack
 
 Follow these directions closely to switch over to this repository.
 
-** Ruby on Rails
-** SQLite
+* Ruby on Rails
+* SQLite
