@@ -1,27 +1,12 @@
-BEWD_SF_8 Homework Repository
+FitPlanner
 =============================
 
-This is the repository where you'll put your homework.
+FitPlanner manages your fitness schedule and helps you search and save new exercises from the FitPlanner community
 
-How To Use This Repo
+Tech Stack
 -----------------------
 
 Follow these directions closely to switch over to this repository.
 
-1. Fork this repository.
-2. Clone your fork to your ```~/projects``` folder.
-3. Create a directory in the ```BEWD_SF_8_homework``` folder using your real name and github account name, like ```BEWD_SF_8_homework/BrianBugh-bbugh```. That will make it easier for us to remember who everyone's github name is. :)
-4. Save any homework files or files you change from BEWD_SF_5 to this folder.
-
-Example of what your folders should look something like:
-
-```
-~/projects/BEWD_SF_8_homework/BrianBugh-bbugh/midterm/midterm.rb
-```
-
-Instructions
--------------
-
-Only use this repository for your homework and any files you are contributing in class.
-
-If any files are in the pull request outside of your personal folder, we will send it back to you to fix it!
+** Ruby on Rails
+** SQLite
